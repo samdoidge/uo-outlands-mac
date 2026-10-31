@@ -32,14 +32,15 @@ The Outlands client is a Windows build. Wine translates Windows calls to macOS; 
 3. **Trust the Sikarugir tap.** Homebrew 7 refuses untrusted third-party taps, so the install fails without this:
 
    ```sh
-   brew trust sikarugir-app/sikarugir
+   brew update
+   brew trust Sikarugir-App/sikarugir
    ```
 
-4. **Install Wine and Sikarugir:**
+4. **Install Wine and Sikarugir.** Sikarugir isn't in Homebrew's main cask list, so it needs its full name:
 
    ```sh
    brew install --cask wine-stable
-   brew install --cask sikarugir
+   brew install --cask Sikarugir-App/sikarugir/sikarugir
    ```
 
    Sikarugir's cask clears quarantine itself. On current Homebrew, do not add `--no-quarantine`; the flag no longer exists.
