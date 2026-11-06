@@ -9,6 +9,8 @@ Run the UO Outlands client on an Apple Silicon Mac without a Windows VM. Wine, a
 
 **No game files are included.** Outlands is free to play and ships its own launcher.
 
+**Crashed after an Outlands update with `No supported FNA3D driver found`?** Set `"force_driver": 1` in `Ultima Online Outlands/ClassicUO/settings.json` and relaunch — see [Troubleshooting](#troubleshooting).
+
 ## Why this setup
 
 | Option | Tradeoff |
@@ -73,6 +75,7 @@ Razor and ClassicUO run inside the same Wine process, so macOS gives them one Do
 
 | Symptom | Fix |
 | --- | --- |
+| `No supported FNA3D driver found` after a client update | Close the launcher and game. Set `"force_driver": 1` in `Ultima Online Outlands/ClassicUO/settings.json` (OpenGL), then relaunch. On Apple Silicon, confirm D3DMetal is still enabled first. |
 | Audio static or popping | macOS **Audio MIDI Setup** → set the output device to 96 kHz |
 | Installer download fails or hangs | Try a VPN; some ISPs and networks block the patcher |
 | Keyboard input not working | Wrapper Configure → **Options** → check the keyboard mapping |
